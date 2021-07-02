@@ -1,0 +1,44 @@
+.fundo {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+h2 {
+  padding-top: 100px;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.item {
+  margin: 0 8%;
+  text-align: center;
+}
+
+.item li{
+  display: inline-block;
+  width: 250px;
+  padding: auto;
+  text-align: center;
+  padding: 20px;
+  margin: 50px;
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.item img {
+  width: 200px;
+  margin: 10px;
+  border: solid 5px black;
+}
+
+.item li p {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.item li:hover{
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  transition: all 0.5s;
+}

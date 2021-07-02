@@ -59,7 +59,8 @@ body {
 
 .fundo {
   width: 80%;
-  height: 1000px;
+  height: 100%;
+  min-height: 800px;
   background: #222222;
   margin: 0 auto;
   position: inherit;
