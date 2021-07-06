@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
   <head>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/projetos-style.css">
@@ -27,19 +28,34 @@
     <div class="fundo">
       <h2>Lista de projetos</h2>
       <ul class="item">
-        <li>
+        <li onclick="abrir('item-1')">
           <img src="files/sample-image.jpeg" alt="">
           <p>Item 1</p>
         </li>
-        <li>
+        <li onclick="abrir('item-2')">
           <img src="files/sample-image.jpeg" alt="">
           <p>Item 2</p>
         </li>
-        <li>
+        <li onclick="abrir('item-3')">
           <img src="files/sample-image.jpeg" alt="">
           <p>Item 3</p>
         </li>
       </ul>
+    </div>
+    <div class="item-content" id="item-1">
+      <button type="button" name="button" value="item-1" onclick="fechar()"><i class="fas fa-times"></i></button>
+      <h2 class="titulo-item">TÍTULO</h2>
+      <p class="texto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <div class="item-content" id="item-2">
+      <button type="button" name="button" value="item-1" onclick="fechar()"><i class="fas fa-times"></i></button>
+      <h2 class="titulo-item">TÍTULO 2</h2>
+      <p class="texto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <div class="item-content" id="item-3">
+      <button type="button" name="button" value="item-1" onclick="fechar()"><i class="fas fa-times"></i></button>
+      <h2 class="titulo-item">TÍTULO 3</h2>
+      <p class="texto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
     </div>
   </body>
   <footer>
@@ -57,3 +73,25 @@
     </div>
   </footer>
 </html>
+<script type="text/javascript">
+function toggleOptions(toggle) {
+  if (toggle) {
+    var itens = document.getElementsByClassName("item");
+    Array.prototype.forEach.call (itens, (item) => {item.style.display = "block"; })
+  }else {
+    var itens = document.getElementsByClassName("item");
+    Array.prototype.forEach.call (itens, (item) => {item.style.display = "none"; })
+  }
+}
+
+function abrir(item){
+  document.getElementById(item).style.display = "block";
+  toggleOptions(0);
+}
+
+function fechar() {
+  var itens = document.getElementsByClassName("item-content");
+  Array.prototype.forEach.call (itens, (item) => { item.style.display = "none"; });
+  toggleOptions(1);
+}
+</script>

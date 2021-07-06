@@ -15,7 +15,8 @@ h2 {
   text-align: center;
 }
 
-.item li{
+.item li {
+  transition: all 0.5s;
   display: inline-block;
   width: 250px;
   padding: auto;
@@ -37,8 +38,56 @@ h2 {
   margin: 10px;
 }
 
-.item li:hover{
+.item li:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: scale(1.1);
+}
+
+.item-content {
+  display: none;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgb(30, 30, 30);
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.6);
   transition: all 0.5s;
+  padding: 30px;
+}
+
+button{
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  color: black;
+  border-radius: 50%;
+  background-color: white;
+  border: 0;
+  right: 20px;
+  top: 20px;
+  transition: all 0.5s;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.titulo-item {
+  margin: 25px;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  padding-top: 0;
+  font-size: 20px;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
