@@ -11,14 +11,14 @@ h2 {
 }
 
 .item {
-  margin: 0 8%;
+  margin: 0;
   text-align: center;
 }
 
 .item li {
   transition: all 0.5s;
   display: inline-block;
-  width: 250px;
+  width: 300px;
   padding: auto;
   text-align: center;
   padding: 20px;
@@ -27,7 +27,8 @@ h2 {
 }
 
 .item img {
-  width: 200px;
+  width: 250px;
+  height: 150px;
   margin: 10px;
   border: solid 5px black;
 }
@@ -45,30 +46,51 @@ h2 {
 
 .item-content {
   display: none;
-  width: 70%;
-  height: 70%;
+  opacity: 0;
+  width: 75%;
+  height: 80%;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  background-color: rgb(30, 30, 30);
+  background-color: rgb(28, 28, 28);
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.6);
+  transition: all 0.5;
+}
+
+.topo {
+  height: 9%;
+  background-image: linear-gradient(rgba(28,28,28,1), rgba(0,0,0,0));
+}
+
+.item-texto {
+  width: auto;
+  height: 90%;
+  padding: 0 5% 0 5%;
+  overflow-x: auto;
+}
+
+.item-rodape {
+  height: 75px;
+  width: 95%;
+  position: relative;
+  bottom: 70px;
+  background-image: linear-gradient(rgba(28,28,28,0), rgba(28,28,28,1));
+}
+
+.ativar {
+  opacity: 1;
   transition: all 0.5s;
-  padding: 30px;
 }
 
 button{
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: absolute;
-  width: 28px;
-  height: 28px;
-  color: black;
-  border-radius: 50%;
-  background-color: white;
+  width: 32px;
+  height: 32px;
+  color: white;
+  border-radius: 25%;
+  background-color: inherit;
   border: 0;
   right: 20px;
   top: 20px;
@@ -76,8 +98,36 @@ button{
 }
 
 button:hover {
-  background-color: black;
+  color: gray;
+}
+
+#jogar {
+  width: 200px;
+  height: 50px;
+  padding: 0;
+  border: solid 5px white;
+  border-radius: 2px;
   color: white;
+  position: relative;
+  margin-top: 25px;
+  margin-bottom: 80px;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+
+.jogar-botao {
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  margin: 0;
+  padding: 18px;
+  text-indent: 0;
+  color: white;
+  display: block;
+}
+
+#jogar:hover {
+  background-color: gray;
 }
 
 .titulo-item {
@@ -90,4 +140,16 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.stickrun1 {
+  width: 60%;
+  border: solid black 5px;
+}
+
+.imagem-desc {
+  font-size: 20px;
+  font-style: italic;
+  color: gray;
+  padding-bottom: 50px;
 }

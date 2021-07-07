@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
   <head>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href='https://css.gg/close-o.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/projetos-style.css">
@@ -29,8 +29,8 @@
       <h2>Lista de projetos</h2>
       <ul class="item">
         <li onclick="abrir('item-1')">
-          <img src="files/sample-image.jpeg" alt="">
-          <p>Item 1</p>
+          <img src="files\logo-stickrun.png" alt="">
+          <p>Stick Run</p>
         </li>
         <li onclick="abrir('item-2')">
           <img src="files/sample-image.jpeg" alt="">
@@ -43,17 +43,32 @@
       </ul>
     </div>
     <div class="item-content" id="item-1">
-      <button type="button" name="button" value="item-1" onclick="fechar()"><i class="fas fa-times"></i></button>
-      <h2 class="titulo-item">TÍTULO</h2>
-      <p class="texto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <div class="topo">
+      <button type="button" name="button" value="item-1" onclick="fechar()"><i class="gg-close-o"></i></button>
+      </div>
+      <div class="item-texto">
+        <h2 class="titulo-item">Stick Run</h2>
+        <p class="texto">Stick Run é um projeto que criei quando queria aprender mais sobre desenvolvimento de jogos e C#, foi criado usando Unity e praticamente todo o conhecimento que precisei foi tirado da internet e da documentação da Unity.</p>
+        <img class="stickrun1" src="files\stick-run-1.png" alt="">
+        <p class="imagem-desc">Imagem de uma das primeiras versões</p>
+        <p class="texto">O jogo é baseado no famoso jogo do dinossauro do navegador Chrome. O projeto inicial foi simples, mas conforme o desenvolvimento foi avançando, decidi adicionar mais e mais elementos ao jogo.</p>
+        <p class="texto">Como foi um dos meus primeiros jogos que criei, e não tinha muita experiencia, o código era bem simples e “feio”, o projeto atual já está totalmente funcional e é possível jogar normalmente, a arte do jogo está simples, porém suficiente.</p>
+        <img class="stickrun1" src="files\stick-run-2.png" alt="">
+        <p class="imagem-desc">Imagem da versão atual</p>
+        <p class="texto">Ainda gostaria de retornar ao projeto e melhorar mais ainda, adicionando novas mecânicas e elementos ao jogo, refazer as artes, animações, física e etc. Mas no momento estou focado em aprender novas linguagens.</p>
+        <p class="texto">Caso queira jogar a versão atual, ela está disponivel no botão abaixo:</p>
+        <center><p class="texto" id="jogar"><a href="Stickrun\index.html" target="_blank" class="jogar-botao">Jogar</a></p></center>
+      </div>
+      <div class="item-rodape">
+      </div>
     </div>
     <div class="item-content" id="item-2">
-      <button type="button" name="button" value="item-1" onclick="fechar()"><i class="fas fa-times"></i></button>
+      <button type="button" name="button" value="item-1" onclick="fechar()"><i class="gg-close-o"></i></button>
       <h2 class="titulo-item">TÍTULO 2</h2>
       <p class="texto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
     </div>
     <div class="item-content" id="item-3">
-      <button type="button" name="button" value="item-1" onclick="fechar()"><i class="fas fa-times"></i></button>
+      <button type="button" name="button" value="item-1" onclick="fechar()"><i class="gg-close-o"></i></button>
       <h2 class="titulo-item">TÍTULO 3</h2>
       <p class="texto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
     </div>
@@ -74,24 +89,33 @@
   </footer>
 </html>
 <script type="text/javascript">
+
+//Alterna entre ativar e desativar os itens clicaveis
 function toggleOptions(toggle) {
   if (toggle) {
     var itens = document.getElementsByClassName("item");
     Array.prototype.forEach.call (itens, (item) => {item.style.display = "block"; })
   }else {
     var itens = document.getElementsByClassName("item");
-    Array.prototype.forEach.call (itens, (item) => {item.style.display = "none"; })
+    Array.prototype.forEach.call (itens, (item) => {window.setTimeout(function() {
+    item.style.display = "none";
+  }, 500) })
   }
 }
 
+//Abre os detalhes de um item
 function abrir(item){
   document.getElementById(item).style.display = "block";
+  window.setTimeout(function() {
+  document.getElementById(item).classList.add("ativar")
+}, 50)
   toggleOptions(0);
 }
 
+//Fecha os detalhes de um item
 function fechar() {
   var itens = document.getElementsByClassName("item-content");
-  Array.prototype.forEach.call (itens, (item) => { item.style.display = "none"; });
+  Array.prototype.forEach.call (itens, (item) => { item.classList.remove("ativar"); item.style.display = "none";});
   toggleOptions(1);
 }
 </script>

@@ -106,8 +106,20 @@ footer ul li {
 
 .texto {
   text-align: justify;
+  text-indent: 25px;
   padding: 14px;
   color: #FFFFFF;
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(20,20,20,0.8);
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: rgb(20,20,20);
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(50,50,50);
 }
